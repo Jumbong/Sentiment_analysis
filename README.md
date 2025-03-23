@@ -22,7 +22,7 @@ The table below shows the performance of different classification models using t
 
 Logistic Regression, SVM, and ElasticNet all achieve a score of 0.88 on Accuracy, F1-score, Precision, and Recall, while Naive Bayes and XGB perform slightly lower. The ROC curve is provided below.
 
-![TF-IDF ROC curve](tfidf_roc.png)
+![TF-IDF ROC curve](tf-idf.png)
 
 ### Model performance using Word2Vec
 
@@ -37,7 +37,7 @@ The table below shows the performance of different classification models using t
 | ElasticNet         | 0.81     | 0.81     | 0.81      | 0.80   |
 
 The performance of the classification models using Word2Vec is slightly lower than that obtained with TF-IDF. Logistic Regression, SVM, and ElasticNet all reach a score of 0.80 on Accuracy, F1-score, Precision, and Recall, while Naive Bayes and XGB perform slightly lower. The ROC curve is shown below. This difference between the two methods can be explained by the fact that the Word2Vec parameters have not been optimized. The ROC curve is provided below.
-![Word2Vec ROC curve](word2vec_roc.png)
+![Word2Vec ROC curve](word2vec.png)
 
 ### Model performance using BERT
 

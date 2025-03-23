@@ -19,11 +19,13 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import SVC
-from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
+from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score, roc_curve, auc
 import spacy
 from collections import Counter, defaultdict
 import seaborn as sns
 from wordcloud import WordCloud
+
+
 
 
 
@@ -44,6 +46,7 @@ def input_docs(folder):
             
             documents.append(cleaned_text)
     return documents
+
 
 def freq(docs):
     strings={}
@@ -200,3 +203,29 @@ def document_vector(doc_tokens, model):
     else:
         # Retourne un vecteur zéro si aucun mot n'est reconnu
         return np.zeros(model.vector_size)
+    
+
+
+
+
+
+def compute_roc(pipelines, X_test, y_test):
+    roc_results = {}
+
+    for name, pipeline in pipelines.items():
+        if name == 'SVM':
+            proba = pipeline.decision_function(X_test)
+        else:
+            proba = pipeline.predict_proba(X_test)[:, 1]  # probabilité classe positive
+        fpr, tpr, _ = roc_curve(y_test, proba)
+        roc_auc = auc(fpr, tpr)
+        roc_results[name] = {'fpr': fpr, 'tpr': tpr, 'roc_auc': roc_auc}
+
+    return roc_results
+
+def evaluate_model(name, y_true, y_pred):
+    print(f"\n--- {name} ---")
+    print("Accuracy :", accuracy_score(y_true, y_pred))
+    print("Precision:", precision_score(y_true, y_pred))
+    print("Recall   :", recall_score(y_true, y_pred))
+    print("F1-score :", f1_score(y_true, y_pred))

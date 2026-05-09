@@ -9,6 +9,9 @@ sentiment orientation: words carrying similar polarity should also be close.
 
 The implementation follows the main ideas of the paper and evaluates the learned representations using a linear SVM classifier.
 
+## 📁 Project Structure
+
+```bash
 SentimentAnalysis/
 ├── aclImdb/
 │   ├── train/
@@ -36,11 +39,13 @@ SentimentAnalysis/
 │   └── step5_evaluate.py
 ├── pyproject.toml
 └── README.md
+```
 
 ## Dataset
 
 The project uses the IMDb dataset introduced by Maas et al. (2011).
 
+```bash 
 aclImdb/
 ├── train/
 │   ├── pos/    positive labeled reviews
@@ -49,7 +54,7 @@ aclImdb/
 └── test/
     ├── pos/    positive test reviews
     └── neg/    negative test reviews
-
+```
 
 The training data contains:
 25,000 labeled reviews

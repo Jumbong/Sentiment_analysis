@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+src/sentiment_vectors/__init__.py
+src/sentiment_vectors/data.py
+src/sentiment_vectors/evaluation.py
+src/sentiment_vectors/semantic.py
+src/sentiment_vectors/sentiment.py
+src/sentiment_vectors/utils.py
+src/sentiment_vectors/vocabulary.py
+src/sentiment_vectors.egg-info/PKG-INFO
+src/sentiment_vectors.egg-info/SOURCES.txt
+src/sentiment_vectors.egg-info/dependency_links.txt
+src/sentiment_vectors.egg-info/requires.txt
+src/sentiment_vectors.egg-info/top_level.txt

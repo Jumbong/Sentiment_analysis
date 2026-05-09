@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sentiment-vectors"
+version = "0.1.0"
+description = "Learning sentiment-aware word vectors from IMDb reviews"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "scikit-learn"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -81,4 +81,4 @@ Nearest neighbors obtained from the learned word vectors:
 Maas, Andrew L., Raymond E. Daly, Peter T. Pham, Dan Huang, Andrew Y. Ng, and Christopher Potts.
 Learning Word Vectors for Sentiment Analysis.
 ACL 2011.
-Dataset: IMDb Large Movie Review Dataset.
+Dataset: IMDb Large Movie Review Dataset.# Sentiment-Analysis
